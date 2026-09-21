@@ -1,0 +1,7 @@
+[Placeholder for: Control Flow: Conditionals & Loops]
+
+This is a sample SLIDES file for the lecture "Control Flow: Conditionals & Loops".
+
+Description: If-else statements, for loops, while loops, and break/continue keywords.
+
+In a production environment, this would be an actual slides file.

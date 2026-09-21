@@ -1,0 +1,7 @@
+[Placeholder for: Binary Trees & Traversals]
+
+This is a sample VIDEO file for the lecture "Binary Trees & Traversals".
+
+Description: Tree terminology, binary search trees, BFS, DFS, in-order, pre-order, post-order traversals.
+
+In a production environment, this would be an actual video file.

@@ -1,0 +1,7 @@
+[Placeholder for: Sorting Algorithms: Bubble, Merge, Quick]
+
+This is a sample SLIDES file for the lecture "Sorting Algorithms: Bubble, Merge, Quick".
+
+Description: Comparing sorting algorithms by time and space complexity with visual walkthroughs.
+
+In a production environment, this would be an actual slides file.

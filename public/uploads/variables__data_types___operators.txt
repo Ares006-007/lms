@@ -1,0 +1,7 @@
+[Placeholder for: Variables, Data Types & Operators]
+
+This is a sample PDF file for the lecture "Variables, Data Types & Operators".
+
+Description: Understanding integers, floats, strings, booleans, and basic arithmetic operators.
+
+In a production environment, this would be an actual pdf file.

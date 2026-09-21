@@ -1,0 +1,7 @@
+[Placeholder for: React Basics: Components & JSX]
+
+This is a sample VIDEO file for the lecture "React Basics: Components & JSX".
+
+Description: Understanding the component model, JSX syntax, and rendering elements.
+
+In a production environment, this would be an actual video file.

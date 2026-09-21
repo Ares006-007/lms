@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String       @id @default(cuid())
+  name          String
+  email         String       @unique
+  password      String
+  role          String       @default("LEARNER") // ADMIN or LEARNER
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  enrollments   Enrollment[]
+  progress      Progress[]
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  description String
+  imageUrl    String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  lectures    Lecture[]
+  enrollments Enrollment[]
+  exams       ExamTimetable[]
+}
+
+model Enrollment {
+  id         String   @id @default(cuid())
+  userId     String
+  courseId    String
+  enrolledAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Lecture {
+  id          String   @id @default(cuid())
+  courseId    String
+  title       String
+  description String?
+  fileUrl     String
+  fileType    String   // PDF, VIDEO, SLIDES
+  uploadedAt  DateTime @default(now())
+
+  course   Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progress Progress[]
+}
+
+model ExamTimetable {
+  id        String   @id @default(cuid())
+  courseId   String
+  subject   String
+  examDate  String   // ISO date string
+  examTime  String   // e.g. "10:00 AM"
+  duration  Int      // in minutes
+  venue     String   @default("Main Hall")
+  createdAt DateTime @default(now())
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+}
+
+model Progress {
+  id          String    @id @default(cuid())
+  userId      String
+  lectureId   String
+  completed   Boolean   @default(false)
+  completedAt DateTime?
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lecture Lecture @relation(fields: [lectureId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lectureId])
+}
+
+model Announcement {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+}

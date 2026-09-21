@@ -1,0 +1,7 @@
+[Placeholder for: Introduction to Python & Setup]
+
+This is a sample PDF file for the lecture "Introduction to Python & Setup".
+
+Description: Installing Python, setting up your IDE, and writing your first Hello World program.
+
+In a production environment, this would be an actual pdf file.
